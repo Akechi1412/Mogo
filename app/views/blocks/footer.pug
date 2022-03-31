@@ -1,0 +1,68 @@
+footer.footer
+  .container
+    .footer-top
+      .footer-column
+        h3.footer-heading.footer-heading--logo
+          a(href="index.html") MoGo
+        p.footer-desc.text Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt molestias nam voluptates nesciunt qui est nihil, temporibus doloremque, quia fugit ab dolorum sequi minima, non labore sint minus dolor consequuntur.
+        p.footer-follower
+          strong 15k 
+          | followers
+        .footer-social
+          span.text.text--light.text--italic Follow Us: 
+          ul.footer-social-list
+            +footerSocialItem({ iconClass: "fab fa-facebook-f" })
+            +footerSocialItem({ iconClass: "fab fa-twitter" })
+            +footerSocialItem({ iconClass: "fab fa-instagram" })
+            +footerSocialItem({ iconClass: "fab fa-pinterest-p" })
+            +footerSocialItem({ iconClass: "fab fa-google-plus-g" })
+            +footerSocialItem({ iconClass: "fab fa-youtube" })
+            +footerSocialItem({ iconClass: "fab fa-dribbble" })
+            +footerSocialItem({ iconClass: "fab fa-tumblr" })
+        form.footer-form(action="javascript:void(0)")
+          input.footer-form-input(type="email" placeholder="Your Email..." required)
+          button.footer-form-submit(type="submit") subscribe
+      .footer-column
+        h3.footer-heading Blogs
+        .footer-blog
+          +footerBLogItem({
+            src: "./images/img-blogs1.png",
+            title: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta, ab!", 
+            date: "Jan 9, 2016"
+          })
+          +footerBLogItem({
+            src: "./images/img-blogs2.png",
+            title: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta, ab!", 
+            date: "Jan 9, 2016"
+          })
+          +footerBLogItem({
+            src: "./images/img-blogs3.png",
+            title: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta, ab!", 
+            date: "Jan 9, 2016"
+          })
+      .footer-column
+        h3.footer-heading Instagram
+        .footer-instagram
+          .footer-instagram-images
+            .footer-instagram-image 
+              img.footer-instagram-img.img(src="./images/img-instagram1.png", alt="")
+            .footer-instagram-image 
+              img.footer-instagram-img.img(src="./images/img-instagram2.png", alt="")
+            .footer-instagram-image 
+              img.footer-instagram-img.img(src="./images/img-instagram3.png", alt="")
+            .footer-instagram-image 
+              img.footer-instagram-img.img(src="./images/img-instagram4.png", alt="")
+            .footer-instagram-image 
+              img.footer-instagram-img.img(src="./images/img-instagram5.png", alt="")
+            .footer-instagram-image 
+              img.footer-instagram-img.img(src="./images/img-instagram6.png", alt="")
+            .footer-instagram-image 
+              img.footer-instagram-img.img(src="./images/img-instagram7.png", alt="")
+            .footer-instagram-image 
+              img.footer-instagram-img.img(src="./images/img-instagram8.png", alt="")
+            .footer-instagram-image 
+              img.footer-instagram-img.img(src="./images/img-instagram9.png", alt="")
+          a(href="#").footer-instagram-more.text.text--light.text--italic View more photos
+    .footer-bottom
+      p.footer-copyright &copy; 2016 MoGo free PSD template by 
+        a.footer-copyright-link(href="#") Laaqiq 

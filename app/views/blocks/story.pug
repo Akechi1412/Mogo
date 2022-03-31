@@ -1,0 +1,35 @@
+section.story
+	.container
+		+blockBox({ caption: "Ours stories", title: "Latest blog" })
+		ul.story-list
+			+storyItem({
+				src: "./images/img-blog1.png",
+				day: "15",
+				month: "Jan",
+				title: "Lorem ipsum dolor sit amet.",
+				desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit reiciendis voluptatem incidunt."
+			})
+				+storyMeta({ views: "572", comments: "17" })
+			+storyItem({
+				src: "./images/img-blog2.png",
+				day: "14",
+				month: "Jan",
+				title: "Lorem ipsum dolor sit amet.",
+				desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit reiciendis voluptatem incidunt."
+			})
+				+storyMeta({ views: "992", comments: "42" })
+			+storyItem({
+				src: "./images/img-blog3.png",
+				day: "12",
+				month: "Jan",
+				title: "Lorem ipsum dolor sit amet.",
+				desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit reiciendis voluptatem incidunt."
+			})
+				+storyMeta({ views: "1560", comments: "98" })
+
+section.map
+	a(href="#").map-inner
+		.container
+			.map-content
+				img.map-icon(src="./images/img-map-icon.png")
+				h2.map-heading open map

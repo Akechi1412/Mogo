@@ -1,0 +1,227 @@
+.footer {
+  &-top {
+    padding: 7rem 0;
+    @include grid(
+      (
+        columns: 3,
+        spacingX: 3rem,
+      )
+    );
+  }
+  &-column {
+    &:first-child {
+      width: calc(100% / 12 * 5 - var(--spacing-x));
+    }
+    &:nth-child(2) {
+      width: calc(100% / 12 * 4 - var(--spacing-x));
+    }
+    &:last-child {
+      width: calc(100% / 12 * 3 - var(--spacing-x));
+    }
+  }
+  &-heading {
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+    &--logo {
+      text-transform: none;
+      font-size: 4.6rem;
+      font-weight: bold;
+      line-height: 0.6;
+      color: $gray-dark-color;
+    }
+  }
+  &-desc {
+    margin-bottom: 4rem;
+  }
+  &-follower {
+    font-size: 1.4rem;
+    padding-bottom: 2rem;
+    margin-bottom: 1.6rem;
+    border-bottom: 1px solid $border-color;
+    strong {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+  }
+  &-social {
+    @include flexbox(flex-start, center, row, wrap);
+    margin-bottom: 4rem;
+    &-list {
+      @include flexbox(flex-start, center, row, wrap);
+    }
+    &-item {
+      margin-left: 1.5rem;
+    }
+    &-icon {
+      padding: 2px;
+      font-size: 1.5rem;
+      color: $tertiary-color;
+    }
+  }
+  &-form {
+    @include flexbox();
+    width: 38rem;
+    max-width: 100%;
+    &-input {
+      padding: 1.2rem;
+      outline: none;
+      border: 1px solid $border-color;
+      border-right: none;
+      width: 100%;
+      min-width: 23rem;
+      &:focus {
+        border-color: $tertiary-color;
+      }
+      &::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        font: 300 italic 1.5rem/1.6 $secondary-font;
+        color: $text-color;
+      }
+      &::-moz-placeholder {
+        /* Firefox 19+ */
+        font: 300 italic 1.5rem/1.6 $secondary-font;
+        color: $text-color;
+      }
+      &:-ms-input-placeholder {
+        /* IE 10+ */
+        font: 300 italic 1.5rem/1.6 $secondary-font;
+        color: $text-color;
+      }
+      &:-moz-placeholder {
+        /* Firefox 18- */
+        font: 300 italic 1.5rem/1.6 $secondary-font;
+        color: $text-color;
+      }
+    }
+    &-submit {
+      padding: 1.5rem 3.2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      @include bgc($tertiary-color);
+      color: white;
+      outline: none;
+      border: none;
+      flex-shrink: 0;
+    }
+  }
+  &-blog {
+    --spacing: 3rem;
+    margin-bottom: calc(-1 * var(--spacing));
+    &-item {
+      @include flexbox(flex-start, center);
+      margin-bottom: var(--spacing);
+    }
+    &-image {
+      @include size(12rem, 8rem);
+      margin-right: 2rem;
+      flex-shrink: 0;
+    }
+    &-info {
+      flex: 1;
+    }
+    &-title {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+      @include textTruncate(2);
+    }
+    &-date {
+      font-size: 1.3rem;
+    }
+  }
+  &-instagram {
+    &-images {
+      @include grid(
+        (
+          columns: 3,
+          spacingX: 2px,
+          spacingY: 2px,
+        )
+      );
+      margin-bottom: 2rem;
+    }
+    &-image {
+      @include ratioImage();
+    }
+    &-more {
+      font-size: 1.3rem;
+      color: $title-color;
+      &:hover {
+        color: $primary-color;
+        text-decoration: underline;
+      }
+    }
+  }
+  &-bottom {
+    padding: 2.4rem 0;
+    border-top: 1px solid $border-color;
+  }
+  &-copyright {
+    text-align: center;
+    &-link {
+      color: $primary-color;
+      transition: all 0.25s ease;
+    }
+    &-link:hover {
+      text-decoration: underline;
+    }
+  }
+  @include maxWidth(1023.98px) {
+    &-top {
+      @include grid(
+        (
+          columns: 1,
+          spacingX: 0px,
+          spacingY: 5rem,
+        )
+      );
+    }
+    &-column {
+      &:not(:nth-child(999)) {
+        width: 100%;
+      }
+    }
+  }
+  @include maxWidth(767.98px) {
+    &-top {
+      @include grid(
+        (
+          columns: 1,
+          spacingX: 0px,
+          spacingY: 4rem,
+        )
+      );
+      padding-bottom: 4rem;
+    }
+    &-heading {
+      margin-bottom: 3rem;
+    }
+  }
+  @include maxWidth(575.98px) {
+    &-form {
+      width: 100%;
+    }
+  }
+  @include maxWidth(479.98px) {
+    &-social {
+      margin-bottom: 2rem;
+    }
+    &-form {
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      &-input {
+        min-width: 26rem;
+        border-right: 1px solid $border-color;
+        margin-top: 2rem;
+        border-radius: 0;
+        line-height: normal;
+      }
+      &-submit {
+        border-radius: 0;
+        margin-top: 2rem;
+      }
+    }
+  }
+}

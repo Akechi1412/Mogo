@@ -1,0 +1,51 @@
+header.header 
+  .container
+    .header-top
+      a.header-logo(href="index.html") MoGo
+      i.fa.fa-bars.header-menu-open
+      ul.header-menu
+        +menuLink({
+          title: "about",
+        })
+        +menuLink({
+          title: "service",
+        }) 
+        +menuLink({
+          title: "work",
+        })
+        +menuLink({
+          title: "blog",
+        })
+        +menuLink({
+          title: "contact",
+        })
+        li.header-menu-item
+          a.header-menu-icon(href="javascript:void(0)")
+            i.fas.fa-shopping-cart
+        li.header-menu-item
+          a.header-menu-icon(href="javascript:void(0)")
+            i.fas.fa-search
+        li.header-menu-close
+          i.fa.fa-times
+    .header-content
+      h2.header-content-caption Creative template
+      h1.header-content-main Welcome to mogo
+      a.header-content-more(href="#") learn more
+    .header-bottom
+      +headerBottomItem({
+        number: "01", 
+        title: "Intro", 
+        activeClass: "is-active"
+      })
+      +headerBottomItem({
+        number: "02", 
+        title: "About", 
+      })
+      +headerBottomItem({
+        number: "03", 
+        title: "Work"
+      })
+      +headerBottomItem({
+        number: "04", 
+        title: "Contacts", 
+      })

@@ -1,0 +1,27 @@
+section.wedo
+  .container
+    +blockBox({
+      caption: "Service",
+      title: "What we do",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    })
+    .wedo-container
+      .wedo-image
+        img.img(src="./images/img-wedo.png" alt="")
+      .wedo-content
+        +wedoItem({
+          src: "./images/img-wedo-icon1.png",
+          title: "photography",
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis accusantium aspernatur alias repudiandae praesentium nostrum veniam voluptas inventore quia, tempora sunt laborum corrupti minima suscipit sint eveniet consectetur adipisci velit? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor laborum commodi, natus at tempore consectetur recusandae, libero sunt aut, molestias exercitationem laboriosam beatae! Quos, ad reprehenderit pariatur architecto alias voluptas Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor laborum commodi, natus at tempore consectetur recusandae, libero sunt aut, molestias exercitationem laboriosam beatae! Quos, ad reprehenderit pariatur architecto alias voluptas",
+          activeClass: "is-active"
+        })
+        +wedoItem({
+          src: "./images/img-wedo-icon2.png",
+          title: "creativity",
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis accusantium aspernatur alias repudiandae praesentium nostrum veniam voluptas inventore quia, tempora sunt laborum corrupti minima suscipit sint eveniet consectetur adipisci velit?"
+        })
+        +wedoItem({
+          src: "./images/img-wedo-icon3.png",
+          title: "web design",
+          desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis accusantium aspernatur alias repudiandae praesentium nostrum veniam voluptas inventore quia, tempora sunt laborum corrupti minima suscipit sint eveniet consectetur adipisci velit?"
+        })

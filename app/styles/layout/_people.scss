@@ -1,0 +1,84 @@
+.people {
+  padding: 11rem 0 12rem;
+  background: linear-gradient(to bottom, rgba(white, 0.8), rgba(white, 0.9)),
+    url(../images/img-people-bg.png) repeat center / cover;
+  &-list {
+    --spacing-x: 8rem;
+    --spacing-y: 6.5rem;
+    margin-top: 8.5rem;
+    margin-bottom: calc(-1 * var(--spacing-y));
+    @include flexbox(space-between, stretch, row, wrap);
+  }
+  &-item {
+    width: 50%;
+    padding: 0 calc(var(--spacing-x) / 2);
+    margin-bottom: var(--spacing-y);
+    @include flexbox();
+    &-img {
+      @include size(11rem);
+      object-fit: cover;
+      object-position: top;
+      border-radius: 50%;
+      margin-right: 3.2rem;
+      flex-shrink: 0;
+    }
+    &-info {
+      padding-top: 1rem;
+    }
+    &-name {
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    &-job {
+      color: $title-color;
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+      &::after {
+        content: "";
+        @include size(6rem, 0.3rem);
+        @include bgc($primary-color);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+    &-name,
+    &-job {
+      @include textTruncate();
+    }
+    &-desc {
+      @include textTruncate(4);
+    }
+  }
+  @include maxWidth(1023.98px) {
+    &-list {
+      --spacing-x: 4rem;
+      --spacing-y: 3.2rem;
+    }
+    &-item {
+      &-img {
+        @include size(8rem);
+        margin-right: 2.4rem;
+      }
+      &-name {
+        margin-bottom: 0.5rem;
+      }
+      &-job {
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  @include maxWidth(767.98px) {
+    padding: 5rem 0 6rem;
+    &-list {
+      margin-top: 4rem;
+      --spacing-x: 2rem;
+      --spacing-y: 2.4rem;
+    }
+    &-item {
+      width: 100%;
+    }
+  }
+}

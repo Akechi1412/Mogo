@@ -1,0 +1,129 @@
+.team {
+  padding: 10rem 0 11rem;
+  @include bgc(white);
+  &-list {
+    @include grid(
+      (
+        columns: 3,
+        spacingX: 3rem,
+      )
+    );
+    margin-top: -1rem;
+  }
+  &-item {
+    @include flexbox(flex-start, stretch, column);
+  }
+  &-main {
+    @include ratioImage(1.2356);
+  }
+  @include hoverEffect(
+    (
+      itemSelector: ".team-main",
+      imgSelector: ".team-img",
+      contentSelector: ".team-content",
+    )
+  );
+  &-img {
+    object-position: top;
+  }
+  &-social {
+    @include flexbox(center, center);
+    &-item {
+      @include bgc($secondary-color);
+      transition: all 0.25s ease-in-out;
+      width: 5.6rem;
+      position: relative;
+      &::before {
+        content: "";
+        display: block;
+        padding-top: 100%;
+      }
+      &:not(:last-child) {
+        &::before {
+          padding-top: calc(100% + 1px);
+        }
+        border-right: 1px solid rgba($primary-color, 0.5);
+      }
+    }
+    &-item:hover {
+      @include bgc($primary-color);
+      .team-social-link {
+        color: white;
+      }
+      &:not(:last-child) {
+        border-right: 1px solid $primary-color;
+      }
+    }
+    &-link {
+      @include absoluteFull();
+      @include flexbox(center, center);
+      color: $primary-color;
+      transition: inherit;
+    }
+    &-icon {
+      font-size: 2.6rem;
+    }
+  }
+  &-info {
+    padding: 3rem 1.5rem 0;
+    text-align: center;
+    flex: 1;
+    @include flexbox(space-between, stretch, column);
+  }
+  &-name {
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    line-height: 1.4;
+    @include textTruncate(2);
+  }
+  &-job {
+    @include textTruncate();
+  }
+  @include maxWidth(1023.98px) {
+    &-social {
+      width: 65%;
+    }
+    &-social-item {
+      width: 25%;
+    }
+    &-social-icon {
+      font-size: 1.8rem;
+    }
+  }
+  @include maxWidth(767.98px) {
+    padding: 5rem 0 6rem;
+    &-list {
+      // @include touchSlider(90%, 2.5rem, 1rem, 2rem);
+      @include touchSlider(
+        (
+          itemWidth: 90%,
+          spacingX: 2.5rem,
+          paddingTop: 1rem,
+          scrollPaddingLeft: 2rem,
+        )
+      );
+    }
+    &-item {
+      display: block;
+    }
+    &-info {
+      padding: 2rem 1.5rem 0;
+    }
+    &-name {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.brand {
+  padding: 6rem 0;
+  @include bgc($gray-light-color);
+  &-img {
+    width: 100%;
+    object-fit: contain;
+  }
+  @include maxWidth(767.98px) {
+    padding: 3rem 0;
+  }
+}

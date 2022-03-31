@@ -1,0 +1,86 @@
+.work {
+  padding-top: 11rem;
+  &-list {
+    @include flexbox();
+    height: 78rem;
+  }
+  &-column {
+    width: 25%;
+  }
+  // @include hoverEffect(
+  //   ".work-item",
+  //   ".work-item-img",
+  //   ".work-item-content",
+  //   "false"
+  // );
+  @include hoverEffect(
+    (
+      itemSelector: ".work-item",
+      imgSelector: ".work-item-img",
+      contentSelector: ".work-item-content",
+      isAnimated: "false",
+    )
+  );
+  &-item {
+    height: 50%;
+    &-content {
+      color: white;
+      padding: 2rem;
+    }
+    &-icon {
+      width: 3rem;
+      margin-bottom: 2rem;
+    }
+    &-title {
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      line-height: 1.6rem;
+      @include textTruncate();
+    }
+    &-desc {
+      color: white;
+      @include textTruncate(2);
+    }
+  }
+  &-item.work-item--full {
+    height: 100%;
+  }
+  @include maxWidth(1599.98px) {
+    &-list {
+      height: 60rem;
+    }
+  }
+  @include maxWidth(1279.98px) {
+    &-list {
+      flex-wrap: wrap;
+      height: auto;
+    }
+    &-column {
+      width: 50%;
+    }
+    &-item {
+      height: 42rem;
+    }
+    &-item.work-item--full {
+      height: 84rem;
+    }
+  }
+  @include maxWidth(1024.98px) {
+    &-item {
+      height: 36rem;
+    }
+    &-item.work-item--full {
+      height: 72rem;
+    }
+  }
+  @include maxWidth(767.98px) {
+    padding-top: 5rem;
+    &-column {
+      width: 100%;
+    }
+    &-item,
+    &-item.work-item--full {
+      height: auto;
+    }
+  }
+}

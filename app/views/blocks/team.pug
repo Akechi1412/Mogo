@@ -1,0 +1,17 @@
+section.team
+  .container
+    +blockBox({
+      caption : "Who we are",
+      title: "Meet our team",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    })
+    ul.team-list
+      +teamItem({ src: "./images/img-team1.png", name: "Matthew Dix", jpb: "Graphic Design" })
+        +teamSocial({})
+      +teamItem({ src: "./images/img-team2.png", name: "Christopher Campbell", job: "Branding/UX design" })
+        +teamSocial({})
+      +teamItem( {src: "./images/img-team3.png", name: "Michael Fertig", job: "Developer" })
+        +teamSocial({})
+section.brand 
+  .container
+    img.brand-img(src="./images/img-logos.png" alt="brand")

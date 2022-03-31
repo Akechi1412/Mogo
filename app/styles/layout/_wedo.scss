@@ -1,0 +1,75 @@
+.wedo {
+  padding: 11rem 0 12rem;
+  &-container {
+    margin-top: -1rem;
+  }
+  &-item {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+    &-header {
+      @include flexbox(flex-start, center);
+      padding: 1.5rem;
+      border: 1px solid $border-color;
+      cursor: pointer;
+    }
+    &-icon {
+      width: 3rem;
+      margin-right: 1.5rem;
+    }
+    &-title {
+      font-weight: 500;
+      text-transform: uppercase;
+      @include textTruncate();
+    }
+    &-caret {
+      margin-left: auto;
+      font-size: 3rem;
+      font-weight: 400;
+      color: $gray-dark-color;
+      padding: 5px;
+    }
+    &-content {
+      padding: 1.5rem;
+      border: 1px solid $border-color;
+      border-top-color: transparent;
+      display: none;
+    }
+    &-text {
+      overflow-y: auto;
+      max-height: 15rem;
+      padding-right: 1.5rem;
+      // custom css scrollbar
+      &::-webkit-scrollbar {
+        width: 0.5rem;
+      }
+      &::-webkit-scrollbar-track {
+        @include bgc($gray-color);
+        border-radius: 2rem;
+      }
+      &::-webkit-scrollbar-thumb {
+        @include bgc($tertiary-color);
+        border-radius: 2rem;
+      }
+    }
+  }
+  &-item.is-active &-item-content {
+    display: block;
+  }
+  @include minWidth(768px) {
+    &-container {
+      @include grid(
+        (
+          columns: 2,
+          spacingX: 3.2rem,
+        )
+      );
+    }
+  }
+  @include maxWidth(767.98px) {
+    padding: 5rem 0 6rem;
+    &-image {
+      margin-bottom: 3rem;
+    }
+  }
+}

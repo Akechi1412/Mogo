@@ -1,0 +1,68 @@
+.about {
+  padding-top: 9.5rem;
+  padding-bottom: 11rem;
+  @include bgc(white);
+  &-list {
+    @include grid(
+      (
+        columns: 3,
+        spacingX: 3rem,
+      )
+    );
+  }
+  // css grid
+  // &-list {
+  //   display: grid;
+  //   grid-template-columns: repeat(3, 1fr);
+  //   grid-gap: 0 3rem;
+  // }
+  &-item {
+    @include ratioImage(0.66);
+    &-content {
+      padding: 1rem;
+      color: white;
+      text-transform: uppercase;
+    }
+    &-title {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 1.4;
+      @include textTruncate();
+    }
+    &-icon {
+      font-size: 2.2rem;
+      margin-bottom: 0.6rem;
+    }
+  }
+  @include hoverEffect(
+    (
+      itemSelector: ".about-item",
+      imgSelector: ".about-item-img",
+      contentSelector: ".about-item-content",
+    )
+  );
+  @include maxWidth(767.98px) {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    // Flexbox responsive about-list
+    &-list {
+      // @include touchSlider(85%, 2.5rem, 1rem, 1rem);
+      @include touchSlider(
+        (
+          itemWidth: 85%,
+          spacingX: 2.5rem,
+          paddingTop: 1rem,
+          scrollPaddingLeft: 1rem,
+        )
+      );
+    }
+    // Css grid responsive about-list
+    // &-item {
+    //   grid-template-columns: unset;
+    //   grid-auto-flow: column;
+    //   grid-auto-columns: 80%;
+    //   grid-gap: 2.5rem 0;
+    // }
+  }
+}

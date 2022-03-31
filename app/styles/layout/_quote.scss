@@ -1,0 +1,102 @@
+.quote {
+  @include bgc($gray-light-color);
+  padding: 7rem 0;
+  &-item {
+    padding: 0 11rem;
+  }
+  &-content {
+    @include flexbox(flex-start, center);
+  }
+  &-icon {
+    @include size(15rem);
+    flex-shrink: 0;
+    @include flexbox(center, center);
+    border: 3px solid $tertiary-color;
+    margin-right: 5.8rem;
+    img {
+      width: 6.4rem;
+    }
+  }
+  &-desc {
+    font: italic 300 2.4rem/1.5 $secondary-font;
+    color: $text-color;
+    margin-bottom: 1.6rem;
+    @include textTruncate(3);
+  }
+  &-author {
+    font-size: 2.4rem;
+    font-family: $tertiary-font;
+    padding-left: 7rem;
+    position: relative;
+    &:before {
+      content: "";
+      @include size(6rem, 0.3rem);
+      @include bgc($primary-color);
+      @include absoluteCenter("top");
+      left: 0;
+    }
+  }
+  // slick slider
+  &-arrow {
+    @include bgc(transparent);
+    border: none;
+    outline: none;
+    padding: 1.5rem 2.2rem;
+    color: $gray-dark-color;
+    @include absoluteCenter("top");
+    z-index: 2;
+    &-prev {
+      left: 0;
+    }
+    &-next {
+      right: 0;
+    }
+  }
+  &-arrow-icon {
+    font-size: 2.8rem;
+    font-weight: 400;
+  }
+  &-arrow.slick-disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+  @include maxWidth(1023.98px) {
+    &-item {
+      padding: 0 8rem;
+    }
+    &-icon {
+      margin-right: 4rem;
+      @include size(12rem);
+      img {
+        width: 5rem;
+      }
+    }
+    &-desc,
+    &-author {
+      font-size: 1.8rem;
+    }
+  }
+  @include maxWidth(767.98px) {
+    padding: 5rem 0;
+    &-arrow {
+      top: 5rem;
+    }
+    &-item {
+      padding: 0;
+    }
+    &-content {
+      flex-direction: column;
+    }
+    &-icon {
+      @include size(10rem);
+      margin-right: 0;
+      margin-bottom: 3rem;
+      img {
+        width: 4rem;
+      }
+    }
+    &-desc {
+      display: block;
+    }
+  }
+}

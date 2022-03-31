@@ -1,0 +1,168 @@
+.story {
+  padding: 11rem 0;
+  @include bgc(white);
+  &-list {
+    @include grid(
+      (
+        columns: 3,
+        spacingX: 3rem,
+      )
+    );
+  }
+  // Header Item
+  &-item {
+    &-header {
+      display: block;
+      // height: 24rem;
+      position: relative;
+      @include ratioImage(0.63);
+    }
+    &-date {
+      @include bgc($tertiary-color);
+      padding: 1.5rem;
+      color: white;
+      position: absolute;
+      bottom: 1rem;
+      left: -1rem;
+    }
+    &-day,
+    &-month {
+      display: block;
+    }
+    &-day {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    &-month {
+      color: white;
+      line-height: 1;
+    }
+  }
+  // Body item
+  &-item {
+    &-body {
+      padding: 2rem 0;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid $border-color;
+    }
+    &-title {
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      @include textTruncate();
+    }
+    &-desc {
+      @include textTruncate(2);
+    }
+  }
+  // Footer item
+  &-meta {
+    @include flexbox(flex-start, center);
+    &-icon {
+      font-size: 1.6rem;
+      color: $tertiary-color;
+      margin-right: 0.6rem;
+    }
+    &-item + &-item {
+      .story-meta-icon {
+        margin-left: 2rem;
+      }
+    }
+  }
+  @include maxWidth(1023.98px) {
+    &-list {
+      @include grid(
+        (
+          columns: 3,
+          spacingX: 2.5rem,
+        )
+      );
+    }
+    &-item {
+      &-date {
+        padding: 1rem;
+        bottom: 0.5rem;
+        left: -0.5rem;
+      }
+      &-day {
+        font-size: 2.6rem;
+      }
+      &-month {
+        font-size: 1.4rem;
+      }
+      &-body {
+        padding: 1.5rem 0;
+        margin-bottom: 1.5rem;
+      }
+      &-title {
+        margin-bottom: 0.8rem;
+      }
+    }
+  }
+  @include maxWidth(767.98px) {
+    padding: 5rem 0;
+    &-list {
+      @include grid(
+        (
+          columns: 1,
+          spacingX: 0px,
+          spacingY: 4rem,
+        )
+      );
+    }
+    &-item {
+      // &-header {
+      //   @include ratioImage(0);
+      // }
+      // &-header > &-img {
+      //   position: relative;
+      //   height: auto;
+      // }
+      &-date {
+        padding: 1.5rem;
+      }
+    }
+  }
+}
+
+.map {
+  background: linear-gradient(to bottom, rgba(white, 0.8), rgba(white, 0.9)),
+    url(../images/img-map.png) repeat center / cover;
+  &-inner {
+    display: block;
+    padding: 5.5rem 0;
+  }
+  .map-content {
+    @include flexbox(center, center, column);
+  }
+  &-icon {
+    margin-bottom: 1.2rem;
+  }
+  &-heading {
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    color: $primary-color;
+    font-weight: bold;
+    padding-bottom: 2rem;
+    position: relative;
+    &::after {
+      content: "";
+      @include size(6rem, 0.3rem);
+      @include bgc($primary-color);
+      @include absoluteCenter("left");
+      bottom: 0;
+    }
+  }
+  @include maxWidth(1023.98px) {
+    &-inner {
+      padding: 4rem 0;
+    }
+  }
+  @include maxWidth(767.98px) {
+    &-inner {
+      padding: 3rem 0;
+    }
+    &-heading {
+      font-size: 1.8rem;
+    }
+  }
+}

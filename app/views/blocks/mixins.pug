@@ -1,0 +1,178 @@
+mixin menuLink(data)
+	if !data.href
+		- data.href = "#"
+	li.header-menu-item
+		a.header-menu-link(href=data.href)=data.title
+
+mixin headerBottomItem(data)
+	.header-bottom-item(class=data.activeClass)
+		span.header-bottom-number=data.number
+		span.header-bottom-text=data.title
+
+mixin blockBox(data) 
+	.block-box
+		h3.block-box-caption=data.caption
+		h2.block-box-title=data.title
+		if data.desc 
+			p.block-box-desc=data.desc
+
+mixin aboutItem(data)
+	if !data.alt
+		- data.alt = ""
+	li.about-item
+		img.img.about-item-img(src=data.src alt=data.alt)
+		.about-item-content
+			i.about-item-icon(class=data.iconClass)
+			span.about-item-title=data.title
+
+mixin numberItem(data)
+	.number-item 
+		h4.number-item-count=data.number
+		span.number-item-text=data.text
+
+mixin serviceItem(data)
+	if !data.alt
+		- data.alt = ""
+	.service-item
+		img.service-item-icon(src=data.src, alt=data.alt)
+		.service-item-info
+			h3.service-item-title=data.title
+			p.service-item-desc.text=data.desc
+
+mixin wedoItem(data)
+	if !data.alt
+		- data.alt = ""
+	.wedo-item(class=data.activeClass)
+		.wedo-item-header
+			img(src=data.src alt=data.alt).wedo-item-icon
+			h3.wedo-item-title=data.title
+			i.fas.fa-angle-up.wedo-item-caret
+		.wedo-item-content
+			.wedo-item-text.text.text--light.text--italic=data.desc
+
+mixin quoteItem(data)
+	if !data.alt
+		- data.alt = ""
+	.quote-item
+		.quote-content
+			.quote-icon
+				img(src=data.src, alt=data.alt)
+			.quote-info
+				p.quote-desc=data.desc
+				span.quote-author=data.author
+
+mixin teamSocial(data)
+	if !data.facebookLink
+		- data.facebookLink = "#"
+	if !data.twitterLink
+		- data.twitterLink = "#"
+	if !data.pinterestLink
+		- data.pinterestLink = "#"
+	if !data.instagramLink
+		- data.instagramLink = "#"
+	ul.team-social 
+		li.team-social-item
+			a.team-social-link(href=data.facebookLink)
+				i.fab.fa-facebook-f.team-social-icon
+		li.team-social-item
+			a.team-social-link(href=data.twitterLink)
+				i.fab.fa-twitter.team-social-icon
+		li.team-social-item
+			a.team-social-link(href=data.pinterestLink)
+				i.fab.fa-pinterest-p.team-social-icon
+		li.team-social-item
+			a.team-social-link(href=data.instagramLink)
+				i.fab.fa-instagram.team-social-icon
+
+mixin teamItem(data)
+	if !data.alt
+		- data.alt = ""
+	li.team-item
+		.team-main
+			img.team-img(src=data.src alt=data.alt)
+			.team-content
+				if block
+					block
+		.team-info
+			h3.team-name=data.name
+			h4.team-job.text.text--light.text--italic=data.job
+
+mixin workItem(data)
+	if !data.alt
+		- data.alt = ""
+	if !data.iconAlt
+		- data.iconAlt = ""
+	.work-item(class=data.modifierClass)
+		img.img.work-item-img(src=data.src, alt=data.alt)
+		.work-item-content
+			img.work-item-icon(src=data.iconSrc alt=data.iconAlt)
+			h3.work-item-title=data.title
+			p.work-item-desc.text.text--light.text--italic=data.desc
+
+mixin testimonialItem(data)
+	if !data.alt
+		- data.alt = ""
+	.testimonial-item
+		.testimonial-content
+			.testimonial-image
+				img.testimonial-img.img(src=data.src, alt=data.alt)
+			.testimonial-info
+				p.testimonial-desc=data.desc
+				span.testimonial-author=data.author
+
+mixin peopleItem(data)
+	if !data.alt
+		- data.alt = ""
+	li.people-item
+		img.people-item-img(src=data.src, alt=data.alt)
+		.people-item-info
+			h4.people-item-name=data.name
+			h5.people-item-job.text.text--light.text--italic=data.job
+			p.people-item-desc.text=data.desc
+
+mixin storyMeta(data)
+	.story-meta
+		.story-meta-item
+			i.fas.fa-eye.story-meta-icon 
+			span.story-meta-number.text.text--light.text--italic=data.views
+		.story-meta-item
+			i.fas.fa-comment-dots.story-meta-icon
+			span.story-meta-number.text.text--light.text--italic=data.comments
+
+mixin storyItem(data)
+	if !data.alt
+		- data.alt = ""
+	if !data.href
+		- data.href = "#"
+	li.story-item
+		a(href=data.href).story-item-header
+			img.story-item-img.img(src=data.src alt=data.alt)
+			.story-item-date
+				span.story-item-day=data.day
+				span.story-item-month.text.text--light.text--italic=data.month
+		.story-item-body
+			h3.story-item-title
+				a(href=data.href)=data.title
+			p.story-item-desc.text=data.desc
+		.story-item-footer
+			if block
+				block
+
+mixin footerSocialItem(data)
+	if !data.href
+		- data.href = "#"
+	li.footer-social-item
+		a.footer-social-link(href=data.href)
+			i.footer-social-icon(class=data.iconClass)
+
+mixin footerBLogItem(data)
+	if !data.alt
+		- data.alt = ""
+	if !data.href
+		- data.href = "#"
+	a(href=data.href).footer-blog-item
+		.footer-blog-image
+			img.footer-blog-img.img(src=data.src, alt=data.alt)
+		.footer-blog-info
+			h4.footer-blog-title=data.title
+			p.footer-blog-date.text.text--light.text--italic=data.date
